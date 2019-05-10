@@ -11,16 +11,17 @@ let Counter = React.createClass({
         console.log('według najnowszej specyfikacji nie powinno się używać tej metody');
     },
     shouldComponentUpdate: function (nextProps, nextState) {
-        console.log('Pozwala kontrolować kiedy element ma się ponownie renderować');
+        console.log('ShouldComponentUpdate() Pozwala kontrolować kiedy element ma się ponownie renderować');
+        return true;
     },
     UNSAFE_componentWillUpdate: function(nextProps, nextState) {
         console.log('według najnowszej specyfikacji nie powinno się używać tej metody');
     },
     componentDidUpdate: function (prevProps, prevState, snapshot) {
-        console.log('można wprowadzić zmiany w odpowiedzi na update komponentu');
+        console.log('componentDidUpdate() można wprowadzić zmiany w odpowiedzi na update komponentu');
     },
     componentWillUnmount: function () {
-        console.log('"posprzątanie" wszystkich elementów, żeby można było spokojnie usunąć element z DOM')
+        console.log('componentWillUnmount() "posprzątanie" wszystkich elementów, żeby można było spokojnie usunąć element z DOM')
     },
     increment: function () {
         this.setState({
